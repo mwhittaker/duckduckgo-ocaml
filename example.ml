@@ -4,7 +4,10 @@ open Async.Std
 let main () : unit Deferred.t =
   let open DuckDuckGo in
   query ~format:(JSON true) "simpsons characters"
-  >>| print_endline
+  >>| function
+  | Ok s -> print_endline s
+  | Error _ -> print_endline "Error"
+
 
 let () =
   don't_wait_for (main ());

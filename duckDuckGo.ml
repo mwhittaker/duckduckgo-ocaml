@@ -23,14 +23,16 @@ let query_uri ?(format=JSON false) ?(no_redirect=false) ?(no_html=false) ?(skip_
 
   uri
 
+let query_and_then ?(format=JSON false) ?(no_redirect=false) ?(no_html=false) ?(skip_disambig=false) (query: string) (f: string -> 'a) : ('a, exn) Result.t Deferred.t =
+  try_with @@ fun () -> begin
+    query_uri ~format ~no_redirect ~no_html ~skip_disambig query |>
+    Cohttp_async.Client.get >>= fun (_, body) ->
+    Pipe.to_list (Cohttp_async.Body.to_pipe body) >>| fun strings ->
+    String.concat strings |> f
+  end
+
 let query ?(format=JSON false) ?(no_redirect=false) ?(no_html=false) ?(skip_disambig=false) query =
-  query_uri ~format ~no_redirect ~no_html ~skip_disambig query |>
-  Cohttp_async.Client.get >>= fun (_, body) ->
-  Pipe.to_list (Cohttp_async.Body.to_pipe body) >>| fun strings ->
-  String.concat strings
+  query_and_then ~format ~no_redirect ~no_html ~skip_disambig query (fun x -> x)
 
 let query_to_json ?(no_redirect=false) ?(no_html=false) ?(skip_disambig=false) query =
-  query_uri ~format:(JSON false) ~no_redirect ~no_html ~skip_disambig query |>
-  Cohttp_async.Client.get >>= fun (_, body) ->
-  Pipe.to_list (Cohttp_async.Body.to_pipe body) >>| fun strings ->
-  String.concat strings |> Yojson.Basic.from_string
+  query_and_then ~format:(JSON false) ~no_redirect ~no_html ~skip_disambig query Yojson.Basic.from_string
