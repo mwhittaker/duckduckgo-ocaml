@@ -7,4 +7,4 @@
 #require "uri";;
 #require "yojson";;
 #require "cohttp.async";;
-#use "duckduckgo.ml";;
+#use "duckDuckGo.ml";;
