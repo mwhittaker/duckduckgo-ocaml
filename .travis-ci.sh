@@ -29,4 +29,3 @@ opam upgrade
 opam install ${OPAM_DEPENDS}
 eval `opam config env`
 make
-make doc

@@ -8,7 +8,8 @@ env:
   #- OCAML_VERSION=4.00.1 OPAM_VERSION=1.1.0
   #- OCAML_VERSION=3.12.1 OPAM_VERSION=1.0.0
   #- OCAML_VERSION=3.12.1 OPAM_VERSION=1.1.0
-after-sucess: |
+after_sucess: |
+    make doc && \
     sudo pip install ghp-import && \
     ghp-import -n doc.docdir && \
     git push -qf https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
