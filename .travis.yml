@@ -1,5 +1,6 @@
 language: c
-script: bash -ex .travis-ci.sh
+#script: bash -ex .travis-ci.sh
+script: echo "hi"
 env:
   - OCAML_VERSION=4.01.0 OPAM_VERSION=1.2.0
   #- OCAML_VERSION=4.01.0 OPAM_VERSION=1.0.0
@@ -8,7 +9,7 @@ env:
   #- OCAML_VERSION=4.00.1 OPAM_VERSION=1.1.0
   #- OCAML_VERSION=3.12.1 OPAM_VERSION=1.0.0
   #- OCAML_VERSION=3.12.1 OPAM_VERSION=1.1.0
-after_sucess: |
+after_sucess: \
     make doc && \
     sudo pip install ghp-import && \
     ghp-import -n doc.docdir && \
