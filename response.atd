@@ -1,0 +1,34 @@
+type json <ocaml module="Yojson.Basic"> = abstract
+
+type response_category = [
+    | Article        <json name="A">
+    | Disambiguation <json name="D">
+    | Category       <json name="C">
+    | Name           <json name="N">
+    | Exclusive      <json name="E">
+    | Nothing        <json name="">
+]
+
+type icon = {
+    url    <json name="URL">:    string;
+    height <json name="Height">: json;
+    width  <json name="Width">:  json;
+}
+
+type response = {
+    abstract          <json name="Abstract">:         string;
+    abstract_text     <json name="AbstractText">:     string;
+    abstract_source   <json name="AbstractSource">:   string;
+    abstract_url      <json name="AbstractURL">:      string;
+    image             <json name="Image">:            string;
+    heading           <json name="Heading">:          string;
+    answer            <json name="Answer">:           string;
+    answer_type       <json name="AnswerType">:       string;
+    definition        <json name="Definition">:       string;
+    definition_source <json name="DefinitionSource">: string;
+    definition_url    <json name="DefinitionURL">:    string;
+    related_topics    <json name="RelatedTopics">:    json list;
+    results           <json name="Results">:          json list;
+    typ               <json name="Type">:             response_category;
+    redirect          <json name="Redirect">:         string;
+}

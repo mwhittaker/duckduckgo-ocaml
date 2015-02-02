@@ -13,3 +13,4 @@ make example.byte && ./example.byte
 - [Real World OCaml JSON Parsing](https://realworldocaml.org/v1/en/html/handling-json-data.html)
 - [Real World OCaml Async](https://realworldocaml.org/v1/en/html/concurrent-programming-with-async.html)
 - [Real World Ocaml DuckDuckGo Search](https://github.com/realworldocaml/examples/blob/master/code/async/search.ml)
+- [`atdgen` Documentation](https://mjambon.github.io/atdgen-doc/)

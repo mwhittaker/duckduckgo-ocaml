@@ -1,13 +1,20 @@
 ML   = duckDuckGo
 EX   = example
-PKGS = async,uri,yojson,cohttp.async
+PKGS = atdgen,async,uri,yojson,cohttp.async
+ATD  = response
 
 all: $(ML).byte
 
-%.byte: %.ml
+$(ATD)_t.ml: $(ATD).atd
+	atdgen -t response.atd
+
+$(ATD)_j.ml: $(ATD).atd
+	atdgen -j response.atd
+
+%.byte: %.ml $(ATD)_t.ml $(ATD)_j.ml
 	corebuild -pkg $(PKGS) $@
 
-%.native: %.ml
+%.native: %.ml $(ATD)_t.ml $(ATD)_j.ml
 	corebuild -pkg $(PKGS) %@
 
 .PHONY: clean
