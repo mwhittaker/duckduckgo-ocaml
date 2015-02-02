@@ -28,4 +28,8 @@ opam update
 opam upgrade
 opam install ${OPAM_DEPENDS}
 eval `opam config env`
-make
+make && \
+make doc && \
+sudo pip install ghp-import && \
+ghp-import -n doc.docdir && \
+git push -qf https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
