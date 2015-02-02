@@ -17,6 +17,10 @@ $(ATD)_j.ml: $(ATD).atd
 %.native: %.ml $(ATD)_t.ml $(ATD)_j.ml
 	corebuild -pkg $(PKGS) %@
 
+.PHONY: doc
+doc:
+	ocamlbuild -use-ocamlfind -cflag -thread -package atdgen,async,uri,yojson,core,cohttp.async doc/doc.docdir/index.html -I doc/
+
 .PHONY: clean
 clean:
 	! test -d _build       || rm -rf _build
@@ -24,4 +28,5 @@ clean:
 	! test -L $(ML).native || rm -f $(ML).native
 	! test -L $(EX).byte   || rm -f $(EX).byte
 	! test -L $(EX).native || rm -f $(EX).native
+	! test -L doc.docdir   || rm -f doc.docdir
 
