@@ -1,5 +1,5 @@
 # Edit this for your own project dependencies
-OPAM_DEPENDS="ocamlfind ounit re atdgen core async uri yojson cohttp"
+OPAM_DEPENDS="ocamlfind atdgen core async uri yojson cohttp"
 
 case "$OCAML_VERSION,$OPAM_VERSION" in
 3.12.1,1.0.0) ppa=avsm/ocaml312+opam10 ;;
@@ -23,6 +23,8 @@ opam --version
 opam --git-version
 
 opam init
+opam update
+opam upgrade
 opam install ${OPAM_DEPENDS}
 eval `opam config env`
 make
