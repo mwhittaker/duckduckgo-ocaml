@@ -1,32 +1,18 @@
-ML   = duckDuckGo
-EX   = example
-PKGS = atdgen,async,uri,yojson,cohttp.async
-ATD  = response
+.PHONY: lib examples doc clean
 
-all: $(ML).byte
+all: lib examples doc
 
-$(ATD)_t.ml: $(ATD).atd
-	atdgen -t response.atd
+lib:
+	cd lib && make
 
-$(ATD)_j.ml: $(ATD).atd
-	atdgen -j response.atd
+examples:
+	cd examples && make
 
-%.byte: %.ml $(ATD)_t.ml $(ATD)_j.ml
-	corebuild -pkg $(PKGS) $@
-
-%.native: %.ml $(ATD)_t.ml $(ATD)_j.ml
-	corebuild -pkg $(PKGS) %@
-
-.PHONY: doc
 doc:
-	ocamlbuild -use-ocamlfind -cflag -thread -package atdgen,async,uri,yojson,core,cohttp.async doc/doc.docdir/index.html -I doc/
+	ocamlbuild -use-ocamlfind -cflag -thread -package atdgen,async,uri,yojson,core,cohttp.async -docflag -sort -docflag -thread -I lib doc/doc.docdir/index.html
 
-.PHONY: clean
 clean:
-	! test -d _build       || rm -rf _build
-	! test -L $(ML).byte   || rm -f $(ML).byte
-	! test -L $(ML).native || rm -f $(ML).native
-	! test -L $(EX).byte   || rm -f $(EX).byte
-	! test -L $(EX).native || rm -f $(EX).native
-	! test -L doc.docdir   || rm -f doc.docdir
-
+	cd lib && make clean
+	cd examples && make clean
+	! test -d _build     || rm -rf _build
+	! test -L doc.docdir || rm -f  doc.docdir

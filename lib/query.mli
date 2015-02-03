@@ -1,3 +1,5 @@
+(** DuckDuckGo Querying *)
+
 type pretty = bool
 type format =
   | JSON of pretty

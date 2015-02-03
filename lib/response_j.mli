@@ -1,6 +1,8 @@
 (* Auto-generated from "response.atd" *)
 
 
+(** DuckDuckGo Responses and JSON Serialization *)
+
 type response_category = Response_t.response_category
 
 type json = Yojson.Basic.json

@@ -1,3 +1,5 @@
+<doc text="DuckDuckGo Responses and JSON Serialization">
+
 type json <ocaml module="Yojson.Basic"> = abstract
 
 type response_category = [

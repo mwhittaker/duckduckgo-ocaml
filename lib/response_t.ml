@@ -1,6 +1,8 @@
 (* Auto-generated from "response.atd" *)
 
 
+(** DuckDuckGo Responses and JSON Serialization *)
+
 type response_category = [
     `Article | `Disambiguation | `Category | `Name | `Exclusive | `Nothing
 ]
