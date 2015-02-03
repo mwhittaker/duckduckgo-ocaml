@@ -1,6 +1,4 @@
-# DuckDuckGo #
-
-:baby_chick: + :camel:
+# DuckDuckGo # ![travis](https://travis-ci.org/mwhittaker/duckduckgo-ocaml.svg?branch=master)
 
 ## Resources ##
 - [DuckDuckGo API](https://duckduckgo.com/api)
