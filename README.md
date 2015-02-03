@@ -12,11 +12,6 @@ to issue DuckDuckGo queries.
 3. [`query_record`][doc_query_record] which returns a
    [`DuckDuckGo.response`][doc_response]
 
-OCaml, originally known as Objective Caml, is the main implementation of the
-Caml programming language, created by Xavier Leroy, Jérôme Vouillon, Damien
-Doligez, Didier Rémy and others in 1996. OCaml extends the core Caml language
-with object-oriented constructs.
-
 We can use `query_record` to query DuckDuckGo about OCaml. Here's
 `query_record`'s simplified type:
 
@@ -33,7 +28,6 @@ DuckDuckGo.query_record "ocaml" >>| function
 | Ok response -> print_endline response.abstract
 | Error _     -> print_endline "no abstract found"
 ```
-
 For more complete examples, please refer to [the examples directory](/examples).
 
 ## Documentation ##
