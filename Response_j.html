@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Query.html">
+<link rel="next" href="Response_t.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="DuckDuckGo" rel="Chapter" href="DuckDuckGo.html">
+<link title="Query" rel="Chapter" href="Query.html">
+<link title="Response_j" rel="Chapter" href="Response_j.html">
+<link title="Response_t" rel="Chapter" href="Response_t.html"><title>Response_j</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Query.html" title="Query">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Response_t.html" title="Response_t">Next</a>
+</div>
+<h1>Module <a href="type_Response_j.html">Response_j</a></h1>
+
+<pre><span class="keyword">module</span> Response_j: <code class="code">sig</code> <a href="Response_j.html">..</a> <code class="code">end</code></pre><div class="info module top">
+DuckDuckGo Responses and JSON Serialization<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEresponse_category"><span class="keyword">type</span> <code class="type"></code>response_category</span> = <code class="type"><a href="Response_t.html#TYPEresponse_category">Response_t.response_category</a></code> </pre>
+
+
+<pre><span id="TYPEjson"><span class="keyword">type</span> <code class="type"></code>json</span> = <code class="type">Yojson.Basic.json</code> </pre>
+
+
+<pre><span id="TYPEresponse"><span class="keyword">type</span> <code class="type"></code>response</span> = <code class="type"><a href="Response_t.html#TYPEresponse">Response_t.response</a></code> = {</pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.abstract">abstract</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.abstract_text">abstract_text</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.abstract_source">abstract_source</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.abstract_url">abstract_url</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.image">image</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.heading">heading</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.answer">answer</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.answer_type">answer_type</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.definition">definition</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.definition_source">definition_source</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.definition_url">definition_url</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.related_topics">related_topics</span>&nbsp;: <code class="type"><a href="Response_j.html#TYPEjson">json</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.results">results</span>&nbsp;: <code class="type"><a href="Response_j.html#TYPEjson">json</a> list</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.typ">typ</span>&nbsp;: <code class="type"><a href="Response_j.html#TYPEresponse_category">response_category</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTresponse.redirect">redirect</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="TYPEicon"><span class="keyword">type</span> <code class="type"></code>icon</span> = <code class="type"><a href="Response_t.html#TYPEicon">Response_t.icon</a></code> = {</pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTicon.url">url</span>&nbsp;: <code class="type">string</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTicon.height">height</span>&nbsp;: <code class="type"><a href="Response_j.html#TYPEjson">json</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTicon.width">width</span>&nbsp;: <code class="type"><a href="Response_j.html#TYPEjson">json</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="VALwrite_response_category"><span class="keyword">val</span> write_response_category</span> : <code class="type">Bi_outbuf.t -> <a href="Response_j.html#TYPEresponse_category">response_category</a> -> unit</code></pre><div class="info ">
+Output a JSON value of type <a href="Response_j.html#TYPEresponse_category"><code class="code">Response_j.response_category</code></a>.<br>
+</div>
+
+<pre><span id="VALstring_of_response_category"><span class="keyword">val</span> string_of_response_category</span> : <code class="type">?len:int -> <a href="Response_j.html#TYPEresponse_category">response_category</a> -> string</code></pre><div class="info ">
+Serialize a value of type <a href="Response_j.html#TYPEresponse_category"><code class="code">Response_j.response_category</code></a>
+      into a JSON string.<br>
+</div>
+<div class="param_info"><code class="code">len</code> : specifies the initial length
+                 of the buffer used internally.
+                 Default: 1024.</div>
+
+<pre><span id="VALread_response_category"><span class="keyword">val</span> read_response_category</span> : <code class="type">Yojson.Safe.lexer_state -> Lexing.lexbuf -> <a href="Response_j.html#TYPEresponse_category">response_category</a></code></pre><div class="info ">
+Input JSON data of type <a href="Response_j.html#TYPEresponse_category"><code class="code">Response_j.response_category</code></a>.<br>
+</div>
+
+<pre><span id="VALresponse_category_of_string"><span class="keyword">val</span> response_category_of_string</span> : <code class="type">string -> <a href="Response_j.html#TYPEresponse_category">response_category</a></code></pre><div class="info ">
+Deserialize JSON data of type <a href="Response_j.html#TYPEresponse_category"><code class="code">Response_j.response_category</code></a>.<br>
+</div>
+
+<pre><span id="VALwrite_json"><span class="keyword">val</span> write_json</span> : <code class="type">Bi_outbuf.t -> <a href="Response_j.html#TYPEjson">json</a> -> unit</code></pre><div class="info ">
+Output a JSON value of type <a href="Response_j.html#TYPEjson"><code class="code">Response_j.json</code></a>.<br>
+</div>
+
+<pre><span id="VALstring_of_json"><span class="keyword">val</span> string_of_json</span> : <code class="type">?len:int -> <a href="Response_j.html#TYPEjson">json</a> -> string</code></pre><div class="info ">
+Serialize a value of type <a href="Response_j.html#TYPEjson"><code class="code">Response_j.json</code></a>
+      into a JSON string.<br>
+</div>
+<div class="param_info"><code class="code">len</code> : specifies the initial length
+                 of the buffer used internally.
+                 Default: 1024.</div>
+
+<pre><span id="VALread_json"><span class="keyword">val</span> read_json</span> : <code class="type">Yojson.Safe.lexer_state -> Lexing.lexbuf -> <a href="Response_j.html#TYPEjson">json</a></code></pre><div class="info ">
+Input JSON data of type <a href="Response_j.html#TYPEjson"><code class="code">Response_j.json</code></a>.<br>
+</div>
+
+<pre><span id="VALjson_of_string"><span class="keyword">val</span> json_of_string</span> : <code class="type">string -> <a href="Response_j.html#TYPEjson">json</a></code></pre><div class="info ">
+Deserialize JSON data of type <a href="Response_j.html#TYPEjson"><code class="code">Response_j.json</code></a>.<br>
+</div>
+
+<pre><span id="VALwrite_response"><span class="keyword">val</span> write_response</span> : <code class="type">Bi_outbuf.t -> <a href="Response_j.html#TYPEresponse">response</a> -> unit</code></pre><div class="info ">
+Output a JSON value of type <a href="Response_j.html#TYPEresponse"><code class="code">Response_j.response</code></a>.<br>
+</div>
+
+<pre><span id="VALstring_of_response"><span class="keyword">val</span> string_of_response</span> : <code class="type">?len:int -> <a href="Response_j.html#TYPEresponse">response</a> -> string</code></pre><div class="info ">
+Serialize a value of type <a href="Response_j.html#TYPEresponse"><code class="code">Response_j.response</code></a>
+      into a JSON string.<br>
+</div>
+<div class="param_info"><code class="code">len</code> : specifies the initial length
+                 of the buffer used internally.
+                 Default: 1024.</div>
+
+<pre><span id="VALread_response"><span class="keyword">val</span> read_response</span> : <code class="type">Yojson.Safe.lexer_state -> Lexing.lexbuf -> <a href="Response_j.html#TYPEresponse">response</a></code></pre><div class="info ">
+Input JSON data of type <a href="Response_j.html#TYPEresponse"><code class="code">Response_j.response</code></a>.<br>
+</div>
+
+<pre><span id="VALresponse_of_string"><span class="keyword">val</span> response_of_string</span> : <code class="type">string -> <a href="Response_j.html#TYPEresponse">response</a></code></pre><div class="info ">
+Deserialize JSON data of type <a href="Response_j.html#TYPEresponse"><code class="code">Response_j.response</code></a>.<br>
+</div>
+
+<pre><span id="VALwrite_icon"><span class="keyword">val</span> write_icon</span> : <code class="type">Bi_outbuf.t -> <a href="Response_j.html#TYPEicon">icon</a> -> unit</code></pre><div class="info ">
+Output a JSON value of type <a href="Response_j.html#TYPEicon"><code class="code">Response_j.icon</code></a>.<br>
+</div>
+
+<pre><span id="VALstring_of_icon"><span class="keyword">val</span> string_of_icon</span> : <code class="type">?len:int -> <a href="Response_j.html#TYPEicon">icon</a> -> string</code></pre><div class="info ">
+Serialize a value of type <a href="Response_j.html#TYPEicon"><code class="code">Response_j.icon</code></a>
+      into a JSON string.<br>
+</div>
+<div class="param_info"><code class="code">len</code> : specifies the initial length
+                 of the buffer used internally.
+                 Default: 1024.</div>
+
+<pre><span id="VALread_icon"><span class="keyword">val</span> read_icon</span> : <code class="type">Yojson.Safe.lexer_state -> Lexing.lexbuf -> <a href="Response_j.html#TYPEicon">icon</a></code></pre><div class="info ">
+Input JSON data of type <a href="Response_j.html#TYPEicon"><code class="code">Response_j.icon</code></a>.<br>
+</div>
+
+<pre><span id="VALicon_of_string"><span class="keyword">val</span> icon_of_string</span> : <code class="type">string -> <a href="Response_j.html#TYPEicon">icon</a></code></pre><div class="info ">
+Deserialize JSON data of type <a href="Response_j.html#TYPEicon"><code class="code">Response_j.icon</code></a>.<br>
+</div>
+</body></html>
