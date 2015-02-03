@@ -9,7 +9,8 @@ examples:
 	cd examples && make
 
 doc:
-	ocamlbuild -use-ocamlfind -cflag -thread -package atdgen,async,uri,yojson,core,cohttp.async -docflag -sort -docflag -thread -I lib doc/doc.docdir/index.html
+	ocamlbuild -use-ocamlfind -cflag -thread -package atdgen,async,uri,yojson,core,cohttp.async -docflag -sort -docflag -thread -I lib doc/doc.docdir/index.html \
+	&& cp doc/style.css doc.docdir
 
 clean:
 	cd lib && make clean
