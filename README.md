@@ -1,14 +1,45 @@
 # DuckDuckGo [![Build Status](https://travis-ci.org/mwhittaker/duckduckgo-ocaml.svg?branch=master)](https://travis-ci.org/mwhittaker/duckduckgo-ocaml)
 
-This repository contains OCaml bindings for the [DuckDuckGo
-API][duckduckgo_api].
+This repository contains [Async][rwo_async] integrated OCaml bindings for the
+[DuckDuckGo API][duckduckgo_api].
 
 ## Getting Started ##
+The [`DuckDuckGo` module][doc_duckduckgo] exports three functions you can use
+to issue DuckDuckGo queries.
+
+1. [`query`][doc_query] which returns a `string`
+2. [`query_json`][doc_query_json] which returns a `Yojson.Basic.json`
+3. [`query_record`][doc_query_record] which returns a
+   [`DuckDuckGo.response`][doc_response]
+
+OCaml, originally known as Objective Caml, is the main implementation of the
+Caml programming language, created by Xavier Leroy, Jérôme Vouillon, Damien
+Doligez, Didier Rémy and others in 1996. OCaml extends the core Caml language
+with object-oriented constructs.
+
+We can use `query_record` to query DuckDuckGo about OCaml. Here's
+`query_record`'s simplified type:
+
+```ocaml
+string -> (DuckDuckGo.response, exn) Core.Std.Result.t Async.Std.Deferred.t
+```
+
+`query_record` takes in a query string and returns a deferred
+`DuckDuckGo.response` result. We can use Async's `try_with` to unwrap the
+result and print the response of the query.
+
+```ocaml
+DuckDuckGo.query_record "ocaml" >>| function
+| Ok response -> print_endline response.abstract
+| Error _     -> print_endline "no abstract found"
+```
+
+For more complete examples, please refer to [the examples directory](/examples).
 
 ## Documentation ##
 Documentation can be found online at
-[http://mwhittaker.github.io/duckduckgo-ocaml/](http://mwhittaker.github.io/duckduckgo-ocaml/).
-Alternatively, you can build the documentation yourself:
+[http://mwhittaker.github.io/duckduckgo-ocaml/][doc_github]. Alternatively,
+you can build the documentation yourself:
 
 ```bash
 make doc && firefox doc.docdir/index.html
@@ -31,10 +62,21 @@ opam install core async atdgen cohttp textwrap uri yojson
 
 ## Resources ##
 - [DuckDuckGo API][duckduckgo_api]
-- [Real World OCaml JSON Parsing](https://realworldocaml.org/v1/en/html/handling-json-data.html)
-- [Real World OCaml Async](https://realworldocaml.org/v1/en/html/concurrent-programming-with-async.html)
-- [Real World Ocaml DuckDuckGo Search](https://github.com/realworldocaml/examples/blob/master/code/async/search.ml)
-- [`atdgen` Documentation](https://mjambon.github.io/atdgen-doc/)
-- [OCaml and Travis](http://anil.recoil.org/2013/09/30/travis-and-ocaml.html)
+- [Real World OCaml JSON Parsing][rwo_json]
+- [Real World OCaml Async][rwo_async]
+- [Real World Ocaml DuckDuckGo Search][rwo_duckduckgo]
+- [`atdgen` Documentation][atdgen]
+- [OCaml and Travis][ocaml_travis]
 
-[duckduckgo_api]: https://duckduckgo.com/api
+[atdgen]:           https://mjambon.github.io/atdgen-doc/
+[doc_duckduckgo]:   http://mwhittaker.github.io/duckduckgo-ocaml/DuckDuckGo.html
+[doc_github]:       http://mwhittaker.github.io/duckduckgo-ocaml
+[doc_query]:        http://mwhittaker.github.io/duckduckgo-ocaml/Query.html#VALquery
+[doc_query_json]:   http://mwhittaker.github.io/duckduckgo-ocaml/Query.html#VALquery_json
+[doc_query_record]: http://mwhittaker.github.io/duckduckgo-ocaml/Query.html#VALquery_record
+[doc_response]:     http://mwhittaker.github.io/duckduckgo-ocaml/Response_j.html#TYPEresponse
+[duckduckgo_api]:   https://duckduckgo.com/api
+[ocaml_travis]:     http://anil.recoil.org/2013/09/30/travis-and-ocaml.html
+[rwo_async]:        https://realworldocaml.org/v1/en/html/concurrent-programming-with-async.html
+[rwo_duckduckgo]:   https://github.com/realworldocaml/examples/blob/master/code/async/search.ml
+[rwo_json]:         https://realworldocaml.org/v1/en/html/handling-json-data.html
