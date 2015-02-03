@@ -1,4 +1,4 @@
-PKGS = atdgen,async,uri,yojson,cohttp.async
+PKGS = textwrap,atdgen,async,uri,yojson,cohttp.async
 
 EXAMPLES = $(wildcard *.ml)
 

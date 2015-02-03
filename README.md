@@ -2,12 +2,6 @@
 
 :baby_chick: + :camel:
 
-## Getting Started ##
-
-```bash
-make example.byte && ./example.byte
-```
-
 ## Resources ##
 - [DuckDuckGo API](https://duckduckgo.com/api)
 - [Real World OCaml JSON Parsing](https://realworldocaml.org/v1/en/html/handling-json-data.html)
